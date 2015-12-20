@@ -12,12 +12,12 @@
 */
 
 Route::get('/', 'IndexController@index');
-Route::post('submit', 'IndexController@contact_us_form');
+Route::post('contact_us/submit',['as' => 'contact_us_submit','uses' => 'IndexController@contact_us_form']);
 
-Route::get('home', 'HomeController@index');
+// Route::get('home', 'HomeController@index');
 
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+// Route::controllers([
+// 	'auth' => 'Auth\AuthController',
+// 	'password' => 'Auth\PasswordController',
+// ]);

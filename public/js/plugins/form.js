@@ -37,7 +37,10 @@ jQuery.fn.reset = function () {
 
 // Functions to validate form lengths in conjunction with the functions above
 function checkform() {
-
+	
+	$('#send_message').prop('disabled', true);
+	$('#send_message').html('<i class="fa fa-spinner"></i>Sending message');	
+			
 	//Any extra fields need to be declared here
     var i_name = $("input#name").val();
     var i_email = $("input#email").val();
@@ -45,6 +48,7 @@ function checkform() {
 //    var i_phone = $("input#phone").val();
     var i_message = $("textarea#message").val();
     var i_vimage = $("input#verify").val();
+	var i_csrf = $("input#_token").val();
 
     var errors = "";
 
@@ -105,38 +109,66 @@ function checkform() {
 		$("html:not(:animated),body:not(:animated)").animate({
 			scrollTop: destination
 		}, 200);
-
+		
+		$('#send_message').prop('disabled', false);
+		$('#send_message').html('<i class="fa fa-paper-plane-o"></i>Send message');
+	
        return false;
     } else {
-        $.post('assets/php/EasyForm/submit.php', $("form#easy").serialize(), function (data) {
-            
-            if (data == "Message sent") {
-                $("div#error").hide();
-                $("div#success").slideDown("fast");
+			
+			$.ajax({
+				url: 'http://zionfashion.local/contact_us/submit',
+				type: "post",
+				data: {name:i_name,email:i_email,message:i_message,_token:i_csrf},
+				dataType: "json",
+				success: function(data){
+					if(data['error'] ==  false)
+					{
+						$("div#error").hide();
+						$("div#success").slideDown("fast");
+						
+						//Scroll to top of #form div - Useful if you have a fixed header
+						var destination = $('div#form').offset().top - 75; //If you are using fixed header, change 0 to any height you wish
+						$("html:not(:animated),body:not(:animated)").animate({
+							scrollTop: destination
+						}, 200);
+					
+						// Clear form data
+						$("#easy").reset();
+						//Reload captcha when message is sent
+						$('#vimage').attr('src', $('#vimage').attr('src')+'?'+Math.random());
+						
+						$('#send_message').prop('disabled', false);
+						$('#send_message').html('<i class="fa fa-paper-plane-o"></i>Send message');
+					}
+					else
+					{
+						$("div#error").html(data['message']).slideDown("fast");
 				
-				//Scroll to top of #form div - Useful if you have a fixed header
-				var destination = $('div#form').offset().top - 75; //If you are using fixed header, change 0 to any height you wish
-				$("html:not(:animated),body:not(:animated)").animate({
-					scrollTop: destination
-				}, 200);
-			
-            // Clear form data
-            $("#easy").reset();
-            //Reload captcha when message is sent
-            $('#vimage').attr('src', $('#vimage').attr('src')+'?'+Math.random());
-
-            } else {
-                //PHP validation
-                $("div#error").html(data).slideDown("fast");
-			
-				//Scroll to top of this div - 70px from the top of your view, change this to whatever number you wish
-				var destination = $('div#form').offset().top - 70;
-				$("html:not(:animated),body:not(:animated)").animate({
-					scrollTop: destination
-				}, 200);
+						//Scroll to top of this div - 70px from the top of your view, change this to whatever number you wish
+						var destination = $('div#form').offset().top - 70;
+						$("html:not(:animated),body:not(:animated)").animate({
+							scrollTop: destination
+						}, 200);
+						
+						$('#send_message').prop('disabled', false);
+						$('#send_message').html('<i class="fa fa-paper-plane-o"></i>Send message');
+					}	
+				  },
+				error:function(){
+					$("div#error").html('Something went wrong. Please try again.').slideDown("fast");
+				
+					//Scroll to top of this div - 70px from the top of your view, change this to whatever number you wish
+					var destination = $('div#form').offset().top - 70;
+					$("html:not(:animated),body:not(:animated)").animate({
+						scrollTop: destination
+					}, 200);
+					
+					$('#send_message').prop('disabled', false);
+					$('#send_message').html('<i class="fa fa-paper-plane-o"></i>Send message');
+				 }   
+			});
 	
-            }
-        });
         return false;
-    }
+    }	
 }

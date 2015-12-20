@@ -7,7 +7,10 @@
     <!-- Meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="zion, zion fashion, fashion, clothes">
+    <meta name="keywords" content="Corporate t-shirt in India, Promotional T-Shirt Supplier in India, T-Shirt Manufacturers in India, home textile manufacturers in India, 
+hotel bed linen suppliers India, hospital linen manufacturers India, towel manufacturers India, Sweater manufacturer in India, Home Curtain suppliers, Shirt manufacturers India, Home Textiles Suppliers, leather belt manufacturer in India, leather products manufacturers in India, leather bag manufacturers in India">
+    <meta name="description" content="Zion,zion,zionfashion,zion fashion,Manufacturer, Supplier and Exporters of T-Shirts, Polo, Shirts, Trouser, Sweater, Hoodies, Specialized in Kid's wear, 
+Bed Linen, Hotel Bed Linen, Kitchen Linen, Living Linen, Table linen, 100% Genuine Leather Products, Leather Belt, Leather Wallets, Customized corporate apparels, ready-made textile for companies, colleges, schools and hospitals">
 
     <!-- 'theme-color' will set background color in Chrome browser on Android 5.0+ -->
     <meta name="theme-color" content="#263238">
@@ -33,6 +36,41 @@
     <link rel="stylesheet" href="{{URL::asset('css/plugins/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/plugins/font-awesome.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/plugins/devicons.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('css/colorbox.css')}}">
+
+    <style type="text/css">
+        .section-xlg {
+            padding: 50px 0px !important;    
+        }
+
+        .ul-right-indent {
+            margin-right: 5px; 
+        }
+
+        #features .section {
+            height: 1050px;
+        }
+
+        .text-grey {
+            color: #757575;
+        }
+
+        .navbar-sm.navbar .hidden-xs-navbar-brand {
+            padding-top: 5px !important;
+        }
+
+        .navbar-height.navbar .hidden-xs-navbar-brand {
+            padding-top: 20px !important;
+        }
+
+        .navbar-sm {
+            background-color: #212121 !important; 
+        }
+
+        .container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
+            min-height : 60px !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -64,7 +102,15 @@
                     </button>
                     <!--/END Mobile Navigation -->
                     <!-- Logo/Name -->
-                    <a class="scroll navbar-brand scroll" href="#sTop">Zion Fashion</a>
+                    <a class="hidden-xs scroll navbar-brand scroll hidden-xs-navbar-brand" href="#sTop">
+                        <img style="width:50px;float:left" src="{{URL::asset('img/zion_logo.png')}}"></img>
+                        <img style="width:120px;float:left" src="{{URL::asset('img/zion_text_logo.png')}}"></img>
+                    </a>
+
+                    <a class="visible-xs navbar-brand" href="#sTop">
+                        <img style="margin-top:-5px; width:35px; float:left" src="{{URL::asset('img/zion_logo.png')}}"></img>
+                    </a>
+
                 </div>
                 <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right" id="nav">
@@ -98,39 +144,39 @@
                 <div class="space-sm"></div>
                 <ul class="dark-icons icons-list center-block">
                     <li>
-                        <a href="#" title="Follow us">
+                        <a href="https://plus.google.com/110526260592016820791" target="_blank" title="Follow us">
                             <i class="fa fa-google-plus"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="#" title="Follow us">
+                        <a href="https://twitter.com/zionfashions" target="_blank" title="Follow us">
                             <i class="fa fa-twitter"></i>
                         </a>
                     </li>
-                    <li>
+                   <!--  <li>
                         <a href="#" title="Follow us">
                             <i class="fa fa-skype"></i>
                         </a>
-                    </li>
+                    </li> -->
                     <li>
-                        <a href="#" title="Follow us">
+                        <a href="https://web.facebook.com/Zion-Fashion-and-Lifestyle-Pvt-Ltd-747894748649784/" target="_blank" title="Follow us">
                             <i class="fa fa-facebook"></i>
                         </a>
                     </li>
-                    <li>
+                   <!--  <li>
                         <a href="#" title="Follow us">
                             <i class="fa fa-youtube-play"></i>
                         </a>
-                    </li>
-                    <li>
+                    </li> -->
+                   <!--  <li>
                         <a href="#" title="Follow us">
                             <i class="fa fa-linkedin"></i>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
                 <div class="space-md"></div>
                 <div>
-                    &copy; 2015 Influence. All rights reserved.
+                    &copy; 2015 Zion Fashion. All rights reserved.
                 </div>
             </div>
         </div>
@@ -146,6 +192,7 @@
     <!--===============================
                 /MAIN WRAP 
      ===============================-->
+
 
     <!-- SCRIPTS -->
     <script src="{{asset('js/jquery.min.js')}}"></script>
@@ -169,11 +216,11 @@
     <script src="{{URL::asset('js/plugins/awesome-work.js')}}"></script>
     <script src="{{URL::asset('js/plugins/jquery.modalEffects.js')}}"></script>
     <script src="{{URL::asset('js/plugins/cssParser.js')}}"></script>
-    <script src="{{URL::asset('js/plugins/snazzy-maps.js')}}"></script>
 
     <script src="{{URL::asset('js/plugins.js')}}"></script>
     <script src="{{URL::asset('js/custom.js')}}"></script>
     <script src="{{URL::asset('js/style-switcher.js')}}"></script>
+    <script src="{{URL::asset('js/jquery.colorbox.js')}}"></script>
     <script>
     $(function() {
         //Plugins Init
@@ -191,9 +238,14 @@
         //Custom JS Init
         Custom.init();
         Custom.captchaFix();
-        Custom.loadMoreNews();
         Custom.mobileMenuAnimation();
     });
+
+    $(document).ready(function(){
+        //Examples of how to assign the Colorbox event to elements
+        $(".group1").colorbox({rel:'group1', transition:"none", width:"80%", height:"80%"});
+    });
+      
     </script>
 
     <!--[if lt IE 9]>
@@ -203,3 +255,13 @@
 </body>
 
 </html>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71626789-1', 'auto');
+  ga('send', 'pageview');
+
+</script>

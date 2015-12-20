@@ -4,6 +4,10 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Input;
+use Config;
+use App;
+use Mail;
 
 class IndexController extends Controller {
 
@@ -14,56 +18,67 @@ class IndexController extends Controller {
 	 */
 	public function index()
 	{
-		$arrProducts = array(
-			0 => array(
-				'name' => 'Product 1',
-				'link' => 'http://www.amazon.in/Vibgyor-Sleeve-Hooded-Black-Sweatshirt/dp/B00Q1NG0IQ/ref=sr_1_1?ie=UTF8&qid=1448025874&sr=8-1&keywords=swater',
-				'image_small' => asset('img/products/knit_wear.jpg'),
-				'type' => 'knit_wear',
-				'type_full' => 'Knit Wear'
-			),
-			1 => array(
-				'name' => 'Product 2',
-				'link' => 'http://www.amazon.in/Vibgyor-Sleeve-Hooded-Black-Sweatshirt/dp/B00Q1NG0IQ/ref=sr_1_1?ie=UTF8&qid=1448025874&sr=8-1&keywords=swater',
-				'image_small' => asset('img/products/knit_wear2.jpg'),
-				'type' => 'knit_wear',
-				'type_full' => 'Knit Wear'
-			),
-			2 => array(
-				'name' => 'Product 3',
-				'link' => 'http://www.amazon.in/Vibgyor-Sleeve-Hooded-Black-Sweatshirt/dp/B00Q1NG0IQ/ref=sr_1_1?ie=UTF8&qid=1448025874&sr=8-1&keywords=swater',
-				'image_small' => asset('img/products/shirt.jpg'),
-				'type' => 'woven_wear',
-				'type_full' => 'Woven Wear'
-			),
-			3 => array(
-				'name' => 'Product 4',
-				'link' => 'http://www.amazon.in/Vibgyor-Sleeve-Hooded-Black-Sweatshirt/dp/B00Q1NG0IQ/ref=sr_1_1?ie=UTF8&qid=1448025874&sr=8-1&keywords=swater',
-				'image_small' => asset('img/products/shirt2.jpg'),
-				'type' => 'woven_wear',
-				'type_full' => 'Woven Wear'
-			),
-			4 => array(
-				'name' => 'Product 5',
-				'link' => 'http://www.amazon.in/Vibgyor-Sleeve-Hooded-Black-Sweatshirt/dp/B00Q1NG0IQ/ref=sr_1_1?ie=UTF8&qid=1448025874&sr=8-1&keywords=swater',
-				'image_small' => asset('img/products/sweater.jpg'),
-				'type' => 'sweater',
-				'type_full' => 'Sweater'
-			),
-			5 => array(
-				'name' => 'Product 6',
-				'link' => 'http://www.amazon.in/Vibgyor-Sleeve-Hooded-Black-Sweatshirt/dp/B00Q1NG0IQ/ref=sr_1_1?ie=UTF8&qid=1448025874&sr=8-1&keywords=swater',
-				'image_small' => asset('img/products/home_text.jpg'),
-				'type' => 'home_textile',
-				'type_full' => 'Home Textile'
-			)
-		);
+		$objProducts = App\InfoProduct::all();
+
+		$i=0;
+		foreach ($objProducts as $key => $value) {
+			if(!empty($value))
+			{
+				$arrProducts[$i]['type'] = $value->type;
+				$arrProducts[$i]['type_full'] = $value->type_full;
+				$arrProducts[$i]['filename'] = $value->filename;
+				$i++;
+			}
+		}
+
+		shuffle($arrProducts);
+
 		return view('home',['arrProducts'=>$arrProducts]);
 	}
 	
-	public function contact_us_form()
+	public function contact_us_form(Request $request)
 	{
-		dd('dd');
+		$name = Input::get('name','');
+		$email = Input::get('email','');
+		$message = Input::get('message','');
+		$data['error'] = false;
+
+		if($name != '' && $email != '' && $message != '')
+		{
+			$arrMailData['name'] = $name;
+			$arrMailData['email'] = $email;
+			$arrMailData['message'] = $message;
+
+			try{
+				Mail::send('emails.contact_us', ['arrMailData' => $arrMailData], function ($message) use ($email) {
+				    $message->from('mail@nikhillad.com', 'Zion Fashion Contact us form');
+
+				    $message->to('info@zionfashions.com')
+				    ->cc('nikhil.lad@outlook.com')
+				    ->subject('Message from '.$email)
+				    ->replyTo($email,$email);
+				});
+			}
+			catch(Exception $e)
+			{
+				$data['error'] = true;
+				$data['message'] = 'Something went wrong. Please try again.';
+			}
+
+			if($data['error'] == false)
+			{
+				$data['error'] = false;
+				$data['message'] = 'Thank you, your email has been sent.';
+			}	
+
+		}
+		else
+		{
+			$data['error'] = true;
+			$data['message'] = 'Please fill in all the fields.';
+		}
+
+		return json_encode($data);
 	}
 	/**
 	 * Show the form for creating a new resource.
