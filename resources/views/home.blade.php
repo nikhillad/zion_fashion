@@ -91,13 +91,13 @@ Zion Fashion
 				
 					@foreach ($arrProducts as $product)
 						 <div class="cbp-item {{$product['type']}}">
-							<a href="{{URL::asset('img/products/'.$product['type'].'/'.$product['filename'])}}" class="cbp-caption group1" target='_blank'>
+							<a href="{{URL::asset('img/products/'.$product['type'].'/large/'.$product['filename'])}}" class="cbp-caption group1" target='_blank'>
 								<div class="cbp-caption-defaultWrap">
-									<img class="img-portfolio" src="{{URL::asset('img/products/'.$product['type'].'/'.$product['filename'])}}" alt="">
+									<img class="img-portfolio" src="{{URL::asset('img/products/'.$product['type'].'/small/'.$product['filename'])}}" alt="">
 								</div>
 								<div class="cbp-caption-activeWrap"></div>
 							</a>
-							<a href="{{URL::asset('img/products/'.$product['type'].'/'.$product['filename'])}}" class="group1 cbp-l-grid-work-title" target='_blank'>{{$product['type_full']}}</a>
+							<a href="{{URL::asset('img/products/'.$product['type'].'/large/'.$product['filename'])}}" class="group1 cbp-l-grid-work-title" target='_blank'>{{$product['type_full']}}</a>
 							<!-- <div class="cbp-l-grid-work-desc">{{$product['type_full']}}</div> -->
 						</div>
 					@endforeach

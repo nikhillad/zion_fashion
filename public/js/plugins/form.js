@@ -117,7 +117,7 @@ function checkform() {
     } else {
 			
 			$.ajax({
-				url: 'http://zionfashion.local/contact_us/submit',
+				url: "contact_us/submit",
 				type: "post",
 				data: {name:i_name,email:i_email,message:i_message,_token:i_csrf},
 				dataType: "json",
