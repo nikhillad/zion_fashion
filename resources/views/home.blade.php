@@ -61,56 +61,43 @@ Zion Fashion
 	</div>
 	<!-- /SLIDESHOW -->
 	
-	
-	 <!-- PRODUCTS SECTION -->
-	<span class="breakPoint" id="s3"></span>
-	<div class="bg-dark section-xlg">
+	<!-- ABOUT US -->
+	<span class="breakPoint" id="s2"></span>
+	<div class="section-xlg">
 		<div class="container">
-			<h2 class="lg-title">Products</h2>
-			<div class="cbp-panel">
-				<div id="filters-container" class="cbp-l-filters-work filter-tabs">
-					<div data-filter="*" class="cbp-filter-item-active cbp-filter-item">SHOW ALL
-					</div>
-					<div data-filter=".knit_wear" class="cbp-filter-item">KNIT WEAR
-						<div class="cbp-filter-counter"></div>
-					</div>
-					<div data-filter=".woven_wear" class="cbp-filter-item">WOVEN WEAR
-						<div class="cbp-filter-counter"></div>
-					</div>
-					<div data-filter=".home_textile" class="cbp-filter-item">HOME TEXTILE
-						<div class="cbp-filter-counter"></div>
-					</div>
-					<div data-filter=".sweater" class="cbp-filter-item">SWEATER
-						<div class="cbp-filter-counter"></div>
-					</div>
-					<div data-filter=".leather_product" class="cbp-filter-item">LEATHER PRODUCT
-						<div class="cbp-filter-counter"></div>
-					</div>
+			<h2 class="lg-title">About Us</h2>
+			<div class="row">
+				<div class="col-md-6">
+					<h2 class="text-primary">What we believe</h2>
+					<p class="text-block">Perfection! We use the best quality material to come with the finest products. Complete detailing in every step right from understanding your needs to the final production stage. Comfort and pleasant experience in our products is what we believe in. </p>
 				</div>
-				<div id="grid-container" class="cbp-l-grid-work cbp-animation-quicksand">
-				
-					@foreach ($arrProducts as $product)
-						 <div class="cbp-item {{$product['type']}}">
-							<a href="{{URL::asset('img/products/'.$product['type'].'/large/'.$product['filename'])}}" class="cbp-caption group1" target='_blank'>
-								<div class="cbp-caption-defaultWrap">
-									<img class="img-portfolio" src="{{URL::asset('img/products/'.$product['type'].'/small/'.$product['filename'])}}" alt="">
-								</div>
-								<div class="cbp-caption-activeWrap"></div>
-							</a>
-							<a href="{{URL::asset('img/products/'.$product['type'].'/large/'.$product['filename'])}}" class="group1 cbp-l-grid-work-title" target='_blank'>{{$product['type_full']}}</a>
-							<!-- <div class="cbp-l-grid-work-desc">{{$product['type_full']}}</div> -->
-						</div>
-					@endforeach
-					
+				<div class="col-md-6">
+					<h2 class="text-primary">Our goals</h2>
+					<p class="text-block">We plan to provide you the widest range of options and be your favourite for apparel and textile needs. Perfection in our products and pleasant experience for our customers is what we strive for.</p>
 				</div>
-				<div class="space"></div>
-			   
 			</div>
+			<hr>
+			<div class="row">
+				<div class="col-md-12">
+				<h2 class="text-primary">Products</h2>
+				<p class="text-block">We provide the widest product range. These include:</p> 	
+				<ul class="text-block list-unstyled">
+					<li><i class="fa fa-hand-o-right ul-right-indent"></i> Knitted Garments – T-Shirt, Polo, Henley, Vest, Sports Wear, Jersey.</li>
+					<li><i class="fa fa-hand-o-right ul-right-indent"></i> Woven Garments – All Types of Denim Wear, Shirts, Trouser and Shorts.</li>
+					<li><i class="fa fa-hand-o-right ul-right-indent"></i> Sweater Knit - Sweatshirt, Hoodies, Cardigan, Turtle Neck, Shrugs and Sweater</li>
+					<li><i class="fa fa-hand-o-right ul-right-indent"></i> Specialized in Kid’s Wear</li>
+					<li><i class="fa fa-hand-o-right ul-right-indent"></i> Home Textiles - Bed Linen, Table Linen and Kitchen Linen. Cushion Cover, Face Towel, Terry Bath Towel, Baby Set, Bedding Set, Home Curtain, Glove, Kitchen Towel and Floor Mat.</li>
+					<li><i class="fa fa-hand-o-right ul-right-indent"></i> Leather Products – Italian Leather Belt and Wallets, 100% Genuine Leather Products, Purse, Leather Bag, Passport Holder, Leather Mobile Cover etc.</li>
+				</ul>	
+				</div>
+			</div>
+			<div class="space-lg"></div>
 		</div>
 	</div>
-	<!-- /PRODUCTS SECTION -->
-		
-	 <!-- FEATURES SECTION -->
+	<!-- /ABOUT US -->	
+	
+
+	 <!-- SERVICE SECTION -->
 	<span class="breakPoint" id="s1"></span>
 	<div class="bg-grey">
 		<!-- Tab panes -->
@@ -158,42 +145,67 @@ Zion Fashion
 			</div>
 		</div>
 	</div>
-	<!-- /FEATURES SECTION -->
-	
-	<!-- ABOUT US -->
-	<span class="breakPoint" id="s2"></span>
-	<div class="section-xlg">
+	<!-- /SERVICE SECTION -->
+
+
+	 <!-- PRODUCTS SECTION -->
+	<span class="breakPoint" id="s3"></span>
+	<div class="bg-dark section-xlg">
 		<div class="container">
-			<h2 class="lg-title">About Us</h2>
-			<div class="row">
-				<div class="col-md-6">
-					<h2 class="text-primary">What we believe</h2>
-					<p class="text-block">Perfection! We use the best quality material to come with the finest products. Complete detailing in every step right from understanding your needs to the final production stage. Comfort and pleasant experience in our products is what we believe in. </p>
+			<h2 class="lg-title">Products</h2>
+			<div class="cbp-panel">
+				<div id="filters-container" class="cbp-l-filters-work filter-tabs">
+					<!-- <div data-filter="*" class="cbp-filter-item-active cbp-filter-item">SHOW ALL
+					</div> -->
+					<a href="{{route('show_category_wise_option',['category'=>'knit_wear'])}}" class="filter-tabs cbp-singlePage">
+						<div class="">KNIT WEAR
+							<!-- <div class="cbp-filter-counter"></div> -->
+						</div>
+					</a>
+					<a href="{{route('show_category_wise_option',['category'=>'woven_wear'])}}" class="filter-tabs cbp-singlePage">
+						<div class="">WOVEN WEAR
+							<!-- <div class="cbp-filter-counter"></div> -->
+						</div>
+					</a>
+					<a href="{{route('show_category_wise_option',['category'=>'home_textile'])}}" class="filter-tabs cbp-singlePage">
+						<div class="">HOME TEXTILE
+							<!-- <div class="cbp-filter-counter"></div> -->
+						</div>
+					</a>
+					<a href="{{route('show_category_wise_option',['category'=>'sweater'])}}" class="filter-tabs cbp-singlePage">
+						<div class="">SWEATER
+							<!-- <div class="cbp-filter-counter"></div> -->
+						</div>
+					</a>
+					<a href="{{route('show_category_wise_option',['category'=>'leather_product'])}}" class="filter-tabs cbp-singlePage">
+						<div class="">LEATHER PRODUCT
+							<!-- <div class="cbp-filter-counter"></div> -->
+						</div>
+					</a>
 				</div>
-				<div class="col-md-6">
-					<h2 class="text-primary">Our goals</h2>
-					<p class="text-block">We plan to provide you the widest range of options and be your favourite for apparel and textile needs. Perfection in our products and pleasant experience for our customers is what we strive for.</p>
+				<div id="grid-container" class="cbp-l-grid-work cbp-animation-quicksand">
+				
+					@foreach ($arrProducts as $product)
+						 <div class="cbp-item {{$product['type']}}">
+							<a href="{{URL::asset('img/products/'.$product['type'].'/large/'.$product['filename'])}}" class="cbp-caption group1" target='_blank'>
+								<div class="cbp-caption-defaultWrap">
+									<!-- <img class="img-portfolio" src="{{URL::asset('img/products/'.$product['type'].'/small/'.$product['filename'])}}" alt=""> -->
+									<img src="data:image/jpeg;base64,{{base64_encode(thumbnailImage('img/products/'.$product['type'].'/small/'.$product['filename']))}}" />
+								</div>
+								<div class="cbp-caption-activeWrap"></div>
+							</a>		
+							<a href="{{route('show_category_wise_option',['category'=>$product['type']])}}" class="cbp-l-grid-work-title cbp-singlePage" target='_blank'>{{$product['type_full']}}</a>
+							<!-- <div class="cbp-l-grid-work-desc">{{$product['type_full']}}</div> -->
+						</div>
+					@endforeach
+					
 				</div>
+				<div class="space"></div>
+			   
 			</div>
-			<hr>
-			<div class="row">
-				<div class="col-md-12">
-				<h2 class="text-primary">Products</h2>
-				<p class="text-block">We provide the widest product range. These include:</p> 	
-				<ul class="text-block list-unstyled">
-					<li><i class="fa fa-hand-o-right ul-right-indent"></i> Knitted Garments – T-Shirt, Polo, Henley, Vest, Sports Wear, Jersey.</li>
-					<li><i class="fa fa-hand-o-right ul-right-indent"></i> Woven Garments – All Types of Denim Wear, Shirts, Trouser and Shorts.</li>
-					<li><i class="fa fa-hand-o-right ul-right-indent"></i> Sweater Knit - Sweatshirt, Hoodies, Cardigan, Turtle Neck, Shrugs and Sweater</li>
-					<li><i class="fa fa-hand-o-right ul-right-indent"></i> Specialized in Kid’s Wear</li>
-					<li><i class="fa fa-hand-o-right ul-right-indent"></i> Home Textiles - Bed Linen, Table Linen and Kitchen Linen. Cushion Cover, Face Towel, Terry Bath Towel, Baby Set, Bedding Set, Home Curtain, Glove, Kitchen Towel and Floor Mat.</li>
-					<li><i class="fa fa-hand-o-right ul-right-indent"></i> Leather Products – Italian Leather Belt and Wallets, 100% Genuine Leather Products, Purse, Leather Bag, Passport Holder, Leather Mobile Cover etc.</li>
-				</ul>	
-				</div>
-			</div>
-			<div class="space-lg"></div>
 		</div>
 	</div>
-	<!-- /ABOUT US -->
+	<!-- /PRODUCTS SECTION -->
 
 		
 	<!-- CONTACT SECTION -->

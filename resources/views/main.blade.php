@@ -117,14 +117,14 @@ Bed Linen, Hotel Bed Linen, Kitchen Linen, Living Linen, Table linen, 100% Genui
                         <li class="dropdown active">
                             <a href="#sTop">Home</a>
                         </li>
-						<li class="dropdown">
-                            <a href="#s3">Products</a>
+                        <li class="dropdown">
+                            <a href="#s2">About Us</a>
                         </li>
                         <li class="dropdown">
                             <a href="#s1">Service</a>
                         </li>
                         <li class="dropdown">
-                            <a href="#s2">About Us</a>
+                            <a href="#s3">Products</a>
                         </li>
                         <li class="dropdown">
                             <a href="#s5">Contact</a>

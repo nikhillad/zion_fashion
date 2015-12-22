@@ -65,11 +65,11 @@ var Plugins = function($) {
     function revolutionSlider() {
         $('html').removeClass('hideOveflow');
         $('.tp-banner').revolution({
-            delay: 11000,
+            delay: 8000,
             startheight: 700,
             startwidth: 1170,
             hideThumbs: 10,
-            navigationType: "none",
+            navigationType: "bullet",
             navigationStyle: "preview4",
             touchenabled: "on",
             onHoverStop: "on",

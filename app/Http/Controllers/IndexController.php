@@ -17,17 +17,33 @@ class IndexController extends Controller {
 	 * @return Response
 	 */
 	public function index()
-	{
+	{	
 		$objProducts = App\InfoProduct::all();
 
 		$i=0;
-		foreach ($objProducts as $key => $value) {
+		$arrProductTypes = array(
+			'home_textile' => 0,
+			'knit_wear' => 0,
+			'leather_product' => 0,
+			'sweater' => 0,
+			'woven_wear' => 0
+			);
+
+		foreach ($objProducts as $value) {
 			if(!empty($value))
 			{
-				$arrProducts[$i]['type'] = $value->type;
-				$arrProducts[$i]['type_full'] = $value->type_full;
-				$arrProducts[$i]['filename'] = $value->filename;
-				$i++;
+				foreach ($arrProductTypes as $type=>$count) {
+					if($value->type == $type)
+						$arrProductTypes[$type]++;
+				}
+
+				if($arrProductTypes[$value->type] < 3)
+				{
+					$arrProducts[$i]['type'] = $value->type;
+					$arrProducts[$i]['type_full'] = $value->type_full;
+					$arrProducts[$i]['filename'] = $value->filename;
+					$i++;
+				}
 			}
 		}
 
@@ -36,6 +52,25 @@ class IndexController extends Controller {
 		return view('home',['arrProducts'=>$arrProducts]);
 	}
 	
+	public function show_items_categorywise(Request $request)
+	{
+		$category = $request->route('category');
+
+		if($category != '')
+		{
+			$objProducts = App\InfoProduct::where('type',$category)->get();
+			
+			if(sizeof($objProducts) != 0)
+				return view('category', ['objProducts' => $objProducts]);	
+			else
+				echo '<h3>No products found under this category!</h3>';
+		}	
+		else
+		{
+			abort(500);
+		}
+	}
+
 	public function contact_us_form(Request $request)
 	{
 		$name = Input::get('name','');
