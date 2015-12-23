@@ -54,20 +54,28 @@ class IndexController extends Controller {
 	
 	public function show_items_categorywise(Request $request)
 	{
-		$category = $request->route('category');
-
-		if($category != '')
+		//respond only when page is called by ajax
+		if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest')
 		{
-			$objProducts = App\InfoProduct::where('type',$category)->get();
-			
-			if(sizeof($objProducts) != 0)
-				return view('category', ['objProducts' => $objProducts]);	
+			$category = $request->route('category');
+
+			if($category != '')
+			{
+				$objProducts = App\InfoProduct::where('type',$category)->get();
+				
+				if(sizeof($objProducts) != 0)
+					return view('category', ['objProducts' => $objProducts]);	
+				else
+					echo '<h3>No products found under this category!</h3>';
+			}	
 			else
-				echo '<h3>No products found under this category!</h3>';
-		}	
+			{
+				abort(500);
+			}
+		}
 		else
 		{
-			abort(500);
+			abort(404);
 		}
 	}
 

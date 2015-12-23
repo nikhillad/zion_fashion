@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'IndexController@index');
+Route::get('/', ['as' => 'home', 'uses' => 'IndexController@index']);
 Route::post('contact_us/submit',['as' => 'contact_us_submit','uses' => 'IndexController@contact_us_form']);
 Route::get('show_category_wise_option/{category}',['as' => 'show_category_wise_option','uses' => 'IndexController@show_items_categorywise']);
 

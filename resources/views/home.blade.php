@@ -103,7 +103,7 @@ Zion Fashion
 		<!-- Tab panes -->
 		<div class="tab-content" id="features">
 			<div class="tab-pane active in" id="responsive">
-				<div class="section">
+				<div class="section-xlg">
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-12 col-md-12">
@@ -136,7 +136,7 @@ Zion Fashion
 									<p class="text-block">We entertain requests for branded, unbranded, and all type of cloth making requests with very high consistency in quality.</p>
 									
 
-									<div class="space visible-xs visible-sm"></div>
+									<div class="space-lg"></div>
 								</div>
 							</div>
 						</div>
