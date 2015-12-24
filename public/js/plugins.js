@@ -66,7 +66,7 @@ var Plugins = function($) {
         $('html').removeClass('hideOveflow');
         $('.tp-banner').revolution({
             delay: 8000,
-            startheight: 659,
+            startheight: 666,
             startwidth: 1170,
             hideThumbs: 10,
             navigationType: "bullet",
