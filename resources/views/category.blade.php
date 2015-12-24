@@ -12,7 +12,7 @@
             @foreach ($objProducts as $product)
                   <div class="col-xs-6 col-md-3">
                     <a target="_blank" href="{{URL::asset('img/products/'.$product->type.'/large/'.$product->filename)}}" class="thumbnail">
-                      <img src="data:image/jpeg;base64,{{base64_encode(thumbnailImage('img/products/'.$product->type.'/large/'.$product->filename))}}" />
+                      <img src="data:image/jpeg;base64,{{base64_encode(thumbnailImage('img/products/'.$product->type.'/small/'.$product->filename))}}" />
                     </a>
                   </div>
             @endforeach         
