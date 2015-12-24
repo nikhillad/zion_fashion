@@ -1,7 +1,7 @@
 @extends('main')
 
 @section('title')
-Zion Fashion
+Manufactures, Supplier, Exporters of Knitted Wear, Woven Wear, Winter Wear, Home Textiles and Leather Products in India - Zionfashions.com
 @endsection
 
 @section('content')
