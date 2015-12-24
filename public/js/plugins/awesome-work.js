@@ -51,7 +51,7 @@
                     url: url,
                     type: 'GET',
                     dataType: 'html',
-                    timeout: 10000
+                    timeout: 100000
                 })
                 .done(function (result) {
                     t.updateSinglePage(result);
