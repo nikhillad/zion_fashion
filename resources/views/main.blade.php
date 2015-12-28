@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="Corporate t-shirt in India, Promotional T-Shirt Supplier in India, T-Shirt Manufacturers in India, home textile manufacturers in India, 
 hotel bed linen suppliers India, hospital linen manufacturers India, towel manufacturers India, Sweater manufacturer in India, Home Curtain suppliers, Shirt manufacturers India, Home Textiles Suppliers, leather belt manufacturer in India, leather products manufacturers in India, leather bag manufacturers in India">
-    <meta name="description" content="Zion,zion,zionfashion,zion fashion,Manufacturer, Supplier and Exporters of T-Shirts, Polo, Shirts, Trouser, Sweater, Hoodies, Specialized in Kid's wear, 
+    <meta name="description" content="zion,zionfashion,zion fashion,Manufacturer, Supplier and Exporters of T-Shirts, Polo, Shirts, Trouser, Sweater, Hoodies, Specialized in Kid's wear, 
 Bed Linen, Hotel Bed Linen, Kitchen Linen, Living Linen, Table linen, 100% Genuine Leather Products, Leather Belt, Leather Wallets, Customized corporate apparels, ready-made textile for companies, colleges, schools and hospitals">
 
     <!-- 'theme-color' will set background color in Chrome browser on Android 5.0+ -->
