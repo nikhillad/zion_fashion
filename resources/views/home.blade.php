@@ -88,6 +88,7 @@ Manufactures, Supplier, Exporters of Knitted Wear, Woven Wear, Winter Wear, Home
 					<li><i class="fa fa-hand-o-right ul-right-indent"></i> Specialized in Kid’s Wear</li>
 					<li><i class="fa fa-hand-o-right ul-right-indent"></i> Home Textiles - Bed Linen, Table Linen and Kitchen Linen. Cushion Cover, Face Towel, Terry Bath Towel, Baby Set, Bedding Set, Home Curtain, Glove, Kitchen Towel and Floor Mat.</li>
 					<li><i class="fa fa-hand-o-right ul-right-indent"></i> Leather Products – Italian Leather Belt and Wallets, 100% Genuine Leather Products, Purse, Leather Bag, Passport Holder, Leather Mobile Cover etc.</li>
+					<li><i class="fa fa-hand-o-right ul-right-indent"></i> Handloom Silk Sarees – Pure Silk Sarees, Handloom Cotton Sarees, Kanchi Silk Sarees, Fancy Kodi Sarees, Exclusive Designer High Quality Handloom Sarees.</li>
 				</ul>	
 				</div>
 			</div>

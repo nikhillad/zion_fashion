@@ -70,6 +70,10 @@ Bed Linen, Hotel Bed Linen, Kitchen Linen, Living Linen, Table linen, 100% Genui
         .container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
             min-height : 60px !important;
         }
+
+        .text-block {
+            color: #757575 !important;
+        }
     </style>
 </head>
 
