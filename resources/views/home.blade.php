@@ -6,7 +6,7 @@ Manufactures, Supplier, Exporters of Knitted Wear, Woven Wear, Winter Wear, Home
 
 @section('content')
 <!-- SLIDESHOW -->
-	<span class="breakPoint" id="sTop"></span>
+	<span class="breakPoint" id="home"></span>
 	<div class="tp-banner-container">
 		<div class="tp-banner">
 			<ul>
@@ -62,7 +62,7 @@ Manufactures, Supplier, Exporters of Knitted Wear, Woven Wear, Winter Wear, Home
 	<!-- /SLIDESHOW -->
 	
 	<!-- ABOUT US -->
-	<span class="breakPoint" id="s2"></span>
+	<span class="breakPoint" id="about_us"></span>
 	<div class="section-xlg">
 		<div class="container">
 			<h2 class="lg-title">About Us</h2>
@@ -99,7 +99,7 @@ Manufactures, Supplier, Exporters of Knitted Wear, Woven Wear, Winter Wear, Home
 	
 
 	 <!-- SERVICE SECTION -->
-	<span class="breakPoint" id="s1"></span>
+	<span class="breakPoint" id="service"></span>
 	<div class="bg-grey">
 		<!-- Tab panes -->
 		<div class="tab-content" id="features">
@@ -150,7 +150,7 @@ Manufactures, Supplier, Exporters of Knitted Wear, Woven Wear, Winter Wear, Home
 
 
 	 <!-- PRODUCTS SECTION -->
-	<span class="breakPoint" id="s3"></span>
+	<span class="breakPoint" id="products"></span>
 	<div class="bg-dark section-xlg">
 		<div class="container">
 			<h2 class="lg-title">Products</h2>
@@ -210,7 +210,7 @@ Manufactures, Supplier, Exporters of Knitted Wear, Woven Wear, Winter Wear, Home
 
 		
 	<!-- CONTACT SECTION -->
-	<span class="breakPoint" id="s5"></span>
+	<span class="breakPoint" id="contact"></span>
 	<div class="bg-grey section-xlg">
 		<div class="container">
 			<h2 class="lg-title">Contact</h2>
