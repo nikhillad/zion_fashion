@@ -172,11 +172,11 @@ Bed Linen, Hotel Bed Linen, Kitchen Linen, Living Linen, Table linen, 100% Genui
                             <i class="fa fa-youtube-play"></i>
                         </a>
                     </li> -->
-                   <!--  <li>
-                        <a href="#" title="Follow us">
+                    <li>
+                        <a href="https://www.linkedin.com/company/zion-fashion" title="Follow us">
                             <i class="fa fa-linkedin"></i>
                         </a>
-                    </li> -->
+                    </li>
                 </ul>
                 <div class="space-md"></div>
                 <div>
