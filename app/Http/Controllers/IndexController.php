@@ -96,7 +96,7 @@ class IndexController extends Controller {
 				Mail::send('emails.contact_us', ['arrMailData' => $arrMailData], function ($message) use ($email) {
 				    $message->from(env('MAIL_USERNAME'), 'Zion Fashion Contact us form');
 
-				    $message->to('info@zionfashions.com')
+				    $message->to('support@zionfashions.com')
 				    ->cc('nikhil.lad@outlook.com')
 				    ->subject('Message from '.$email)
 				    ->replyTo($email,$email);
