@@ -230,7 +230,7 @@ Manufactures, Supplier, Exporters of Knitted Wear, Woven Wear, Winter Wear, Home
 						<li>
 							<h3>Contact Us</h3>
 							<p class="text-block">
-								<a target="_blank" href="mailto:support@zionfashions.com"><i style="font-size:20px" class="fa fa-envelope"></i> info@zionfashions.com</a>
+								<a target="_blank" href="mailto:support@zionfashions.com"><i style="font-size:20px" class="fa fa-envelope"></i> support@zionfashions.com</a>
 							</p>
 							<p class="text-block"><i style="font-size:20px" class="fa fa-phone"></i> +91 9833782304</p>
 							<br>
