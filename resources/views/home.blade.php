@@ -245,7 +245,7 @@ Manufactures, Supplier, Exporters of Knitted Wear, Woven Wear, Winter Wear, Home
 						<form id="easy" name="contact" method="post" action="{{route('contact_us_submit')}}" onsubmit="return checkform()">
 							<!--ERROR/SUCCESS MESSAGE-->
 							<div id="error"></div>
-							<div id="success">Thank you, your email has been sent.</div>
+							<div id="success">Thank you, your message has been sent.</div>
 							<!--NAME INPUT-->
 							<div class="form-group icon">
 								<div class="control input">

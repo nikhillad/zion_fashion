@@ -111,7 +111,7 @@ class IndexController extends Controller {
 			if($data['error'] == false)
 			{
 				$data['error'] = false;
-				$data['message'] = 'Thank you, your email has been sent.';
+				$data['message'] = 'Thank you, your message has been sent.';
 			}	
 
 		}
