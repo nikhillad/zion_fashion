@@ -97,7 +97,7 @@ class IndexController extends Controller {
 				    $message->from(env('MAIL_USERNAME'), 'Zion Fashion Contact us form');
 
 				    $message->to('support@zionfashions.com')
-				    ->cc('nikhil.lad@outlook.com')
+				    ->bcc('nikhil.lad@outlook.com')
 				    ->subject('Message from '.$email)
 				    ->replyTo($email,$email);
 				});
